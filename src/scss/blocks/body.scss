@@ -2,6 +2,16 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: #111;
+  background-color: #FFFFFF;
   font-family: sans-serif;
+  margin: 0;
+}
+img{
+  display: block;
+  max-width: 100%;
+}
+nav ul{
+  list-style: none;
+  margin-block: 0;
+  padding-left: 0;
 }
