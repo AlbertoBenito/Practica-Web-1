@@ -1,59 +1,117 @@
+@use '../mixins/responsive.scss' as *;
+@use '../mixins/hover.scss' as *;
+@use '../mixins/pseudo.scss' as *;
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
-.section_creations{
+.section_creations_all{
     font-family: "Josefin Sans", serif;
     text-transform: uppercase;
     font-weight: 200;
-
+ 
+    display: grid;
+    
 
     &_title{
-        text-align: center;
-        font-size: 32pt;
-        margin-bottom: 48pt;
+       margin-inline: auto;
+        font-size: 32px;
+        margin-bottom: 48px;
+        @include responsive(1024px){
+            margin-left: 162px;
+            text-align: left;
+
+        } 
     }
-    &_box{
+    &_boxes{
+
+
+        @include responsive(1024px){
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            width: 80%;
+            margin: 0;
+            gap: 0px;
+            margin-inline: auto; 
+        } 
+
+        &_box{
+
         position: relative;
-        background-image: linear-gradient(to right, rgb(0 0 0 / 1), transparent);
-        
         color: #fff;
         width: 90%;
-        margin-inline: 24pt;
+        margin-inline: auto;
         margin-bottom:24px ;
         position: relative;
-        background-image: linear-gradient(to right, rgb(0 0 0 / 1), transparent);
+        background-image: linear-gradient(to right, rgb(0 0 0 / 0.6), transparent);
+        @include hover{
+            color: black;
+            background-color:#fff;
+            opacity: 30%;
+        }
+
+ 
+
         .box_img{
+            width: 100%;
             position: relative;
             z-index: -1;
 
+
+
         }
         .title{
-            z-index: 100;
+            margin: 0;
+            z-index: 1000;
             position: absolute;
             width: 40%;
-            font-size: 24pt;
-            top: 52px;
+            font-size: 24px;
+            bottom: 20px;
            left: 20px; 
+           @include responsive(1024px){
+            bottom: 32px;
+            left: 46px; 
+            font-size: 32px;
+            width: 60%;
+            opacity: 100%;
+
+        } 
+        @include hover{
+            color: black;
+            opacity: 100%;
+        }
+
         }
 
        
     }
-    &_button{
-        font-family: "Alata", serif;
-        letter-spacing: 5px;
-        text-align: center;
-        // padding-block: 13px;
-        // padding-inline: 39px;
-        margin-top: 34px;
-        margin-bottom: 96px;
-        width: 157px;
-        height: 40px;
-        display: block;
-        margin-inline: auto;
-        background-color: #fff;
-        border: solid 1px  black;
-        font-size: 14px;
+
+}
+
+
+&_button{
+    font-family: "Alata", serif;
+    letter-spacing: 5px;
+    text-align: center;
+    // padding-block: 13px;
+    // padding-inline: 39px;
+    margin-top: 34px;
+    margin-bottom: 96px;
+    width: 157px;
+    height: 40px;
+    display: block;
+    margin-inline: auto;
+    background-color: #fff;
+    border: solid 1px  black;
+    font-size: 14px;
+    @include responsive(1024px){
+     position: absolute;
+     right: 162px;
+    } 
+    @include hover{
+        color: #fff;
+        background-color:black;
     }
+}
 }
 
 

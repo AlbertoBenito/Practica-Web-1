@@ -1,4 +1,6 @@
 
+@use '../mixins/responsive.scss' as *;
+@use '../mixins/hover.scss' as *;
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
 .footer{
@@ -9,18 +11,61 @@
     text-align: center;
     display: block;
     font-family: "Alata", serif;
-    font-size: 15pt;
+    font-size: 15px;
     color:#fff;
+    @include responsive(1024px){
+
+        height:150px ;
+      
+          
+          }  
+&_all{
+    @include responsive(1024px){
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin-inline: auto;
+        height: 150px;
+          
+          }   
+         
+}
+   
+
     &_logo{
         padding-top: 56px;
         margin-inline: auto;
         margin-bottom: 32px;
+
+        @include responsive(1024px){
+            width: 140px;
+            justify-content: left;
+            margin-inline: 0;
+            margin-bottom: 16px;
+
+            } 
     }
     &_links{
+        @include responsive(1024px){
+            display: flex;
+            } 
+        .footer_link{
         display: inline-block;
         display: block;
         text-align: center;
         margin-bottom: 16px;
+        @include hover{
+        
+            border-bottom: solid #FFFF 2px;
+        }
+        @include responsive(1024px){
+            text-align: left;
+            justify-content: left;
+            margin-right: 35px;
+            margin-bottom: 0;
+            } 
+
+        }
      
 
     }
@@ -30,15 +75,26 @@
         text-align: center;
         display: flex;
         margin-bottom: 16px;
+        @include responsive(1024px){
+            margin-right: 0;
+            }
         .social{
             margin-top: 46px;
             margin-inline: 8px;
+            @include hover{
+        
+                border-bottom: solid #FFFF 2px;
+            }
+           
         }
     }
     p{
         opacity: 50%;
         text-align: center;
         margin-bottom: 56px;
+        @include responsive(1024px){
+            margin-right: 0;
+            }
     }
 
 }
